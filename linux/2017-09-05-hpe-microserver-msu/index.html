@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -123,9 +123,9 @@ module <a href="http://www.tldp.org/HOWTO/SCSI-2.4-HOWTO/sg.html">sg</a> to be l
 which is located in the folder <code>/opt/marvell/storage/cli</code> is all I need. Don&rsquo;t
 forget to manually load the <code>sg</code> module, which sets up the SCSI devices for this
 script, e.g., with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe -a sg
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe -a sg
 </span></span></code></pre></div><p>Then, the SMART data can be retrieved, e.g., with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /opt/marvell/storage/cli/mvcli smart -p <span style="color:#0000cf;font-weight:bold">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /opt/marvell/storage/cli/mvcli smart -p <span style="color:#0000cf;font-weight:bold">0</span>
 </span></span></code></pre></div><p>Awesome :-)!</p>
 <p>In the course of this project, I also stumbled upon other very useful SCSI
 related software: <code>lsscsi</code>, <code>sg3_utils</code>, <code>sdparm</code>, <code>hdidle</code>.</p>
@@ -138,7 +138,22 @@ please leave a note if you know an easy way to achieve this.</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

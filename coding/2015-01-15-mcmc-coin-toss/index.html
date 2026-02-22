@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -103,7 +103,7 @@ P(58 \mathrm{ heads}) = {100 \choose 58} (0.58)^{58} (0.42)^{42}
 distribution of the probability \(\theta\) (i.e., the probability that
 \(\theta\) is a certain value conditioned on our observation).</p>
 <p>The following C++ code does exactly this (the last column is the posterior).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;iostream&gt;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;iostream&gt;</span><span style="color:#8f5902;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;iomanip&gt;</span><span style="color:#8f5902;font-style:italic">
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;math.h&gt;</span><span style="color:#8f5902;font-style:italic">
@@ -279,7 +279,22 @@ distribution of the probability \(\theta\) (i.e., the probability that
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

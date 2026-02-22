@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 
     <head>
-	<meta name="generator" content="Hugo 0.154.2">
+	<meta name="generator" content="Hugo 0.155.3">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
         
@@ -26,7 +26,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -195,7 +195,7 @@ Have a look at <a href="https://github.com/dschrempf/aoc23">my solutions to the 
 <p>Cheers!</p>
 <p>PS: I even added automatic fetching of the full input as well as the samples
 (see <a href="https://github.com/dschrempf/aoc23/blob/main/app/Fetch.hs">Fetch.hs</a>). For example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cabal run fetch <span style="color:#0000cf;font-weight:bold">1</span>    <span style="color:#8f5902;font-style:italic"># Fetch full input of day one.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cabal run fetch <span style="color:#0000cf;font-weight:bold">1</span>    <span style="color:#8f5902;font-style:italic"># Fetch full input of day one.</span>
 </span></span><span style="display:flex;"><span>cabal run fetch <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#0000cf;font-weight:bold">1</span>  <span style="color:#8f5902;font-style:italic"># Fetch sample one of day one.</span>
 </span></span></code></pre></div>
             <a href="https://blog.composef.org/coding/2023-12-02-advent-of-code-2023/">&nbsp;Read on &hellip;</a>
@@ -217,7 +217,7 @@ Have a look at <a href="https://github.com/dschrempf/aoc23">my solutions to the 
             </span>
             <p>An update of my Tolino Shine 3 reader failed. The system recovery did not work
 aborting with the following error:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Batterie fast leer! Ein-/Ausschalter druecken, Geraet mind. 2 h aufladen und neu starten.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Batterie fast leer! Ein-/Ausschalter druecken, Geraet mind. 2 h aufladen und neu starten.
 </span></span><span style="display:flex;"><span>Low battery! Press the power button, charge the device for a minimum of 2 hours and restart.
 </span></span></code></pre></div><p>Weird. Charging did not help either. In fact, I am not <a href="https://test.freifunk-gera-greiz.de/namespace/reparatur-tolino-shine-3">not the only one</a>
 experiencing this problem. Be sure to read the linked blog post, it contains
@@ -545,7 +545,7 @@ In what follows, I try to dissect <code>foldlM</code> for a specific example.</p
 <p>Monadic folds can be used to <strong>perform a series of actions that depend on the
 previous output</strong>. The following function produces an <em>action b</em> from a <em>value a</em>
 also taking into account the output of the previous <em>action b</em>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">b</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">a</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">m</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">b</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">a</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">m</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">)</span>
 </span></span></code></pre></div><p>And here the definition of <code>foldlM</code> (which is the same as <code>foldM</code>).</p>
             <a href="https://blog.composef.org/coding/2017-07-20-folding-around-monads-in-haskell/">&nbsp;Read on &hellip;</a>
         </div>
@@ -595,7 +595,7 @@ navigate directories from the command line:</p>
 </ul>
 <p>It is readily available in most Linux distributions.  The sole thing
 that has to be done manually is sourcing a script in your <code>.bashrc</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">source</span> /etc/profile.d/autojump.sh
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">source</span> /etc/profile.d/autojump.sh
 </span></span></code></pre></div><p>Jumping around with <code>j</code> is awesome :-)!</p>
             <a href="https://blog.composef.org/linux/2016-05-20-autojump/">&nbsp;Read on &hellip;</a>
         </div>
@@ -648,7 +648,7 @@ host names, IP addresses or passwords.</p>
 <h2 id="login-with-ssh-key">Login with SSH key</h2>
 <p>First, you want to create your own <a href="https://wiki.archlinux.org/index.php/SSH_keys">SSH key</a> so that your server accepts
 your login without any password.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create an SSH key (use the standard path).  Be careful, if you do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create an SSH key (use the standard path).  Be careful, if you do</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># not set a passphrase, anybody that has access to your computer can</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># log into servers that have been set up to accept your key.</span>
 </span></span><span style="display:flex;"><span>ssh-keygen
@@ -930,7 +930,7 @@ distribution of the probability \(\theta\) (i.e., the probability that
             <p>Did you ever need to calculate the time difference between two consecutive time
 stamps from a log file or something similar? Check out <a href="http://www.fresse.org/dateutils/">dateutils</a>, it is really
 useful:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ddiff -i <span style="color:#4e9a06">&#39;%H:%M:%S&#39;</span> <span style="color:#4e9a06">&#39;19:09:43,683&#39;</span> <span style="color:#4e9a06">&#39;19:34:10,350&#39;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ddiff -i <span style="color:#4e9a06">&#39;%H:%M:%S&#39;</span> <span style="color:#4e9a06">&#39;19:09:43,683&#39;</span> <span style="color:#4e9a06">&#39;19:34:10,350&#39;</span>
 </span></span></code></pre></div>
             <a href="https://blog.composef.org/linux/2015-01-07-dateutils/">&nbsp;Read on &hellip;</a>
         </div>
@@ -957,12 +957,12 @@ possibly many methods to use it to zip many folders (or files) in parallel.</p>
 <li>Create a file with all folders that you want to zip, e.g with:</li>
 </ol>
 <!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls -1 &gt; folders
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ls -1 &gt; folders
 </span></span></code></pre></div><ol>
 <li>Use GNU Parallel to zip them:</li>
 </ol>
 <!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>parallel -a folders <span style="color:#4e9a06">&#34;tar -czf {}.tar.gz {}&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>parallel -a folders <span style="color:#4e9a06">&#34;tar -czf {}.tar.gz {}&#34;</span>
 </span></span></code></pre></div><p>In order to unzip many files at ones (this method can also be used to
 zip the files if their names follow certain patterns):</p>
             <a href="https://blog.composef.org/linux/2015-01-07-gnu-parallel/">&nbsp;Read on &hellip;</a>
@@ -1014,7 +1014,22 @@ fewer options.</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

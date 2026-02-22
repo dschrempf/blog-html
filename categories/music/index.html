@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -111,7 +111,22 @@
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

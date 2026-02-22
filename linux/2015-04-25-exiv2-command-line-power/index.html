@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -127,13 +127,13 @@ adds one hour, <code>1:01</code> adds one hour and one minute, <code>-0:00:30</c
 subtracts 30 seconds.</dd>
 </dl>
 <p>An example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiv2 adjust -a <span style="color:#0000cf;font-weight:bold">1</span> *.jpg
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiv2 adjust -a <span style="color:#0000cf;font-weight:bold">1</span> *.jpg
 </span></span></code></pre></div><p>adds one hour to the time stamp of all JPG files in the working
 directory.</p>
 <h2 id="batch-rename">Batch rename</h2>
 <p>After you have adjusted the time stamps of the different cameras, you
 may want to rename the files, e.g.:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiv2 rename *.jpg
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiv2 rename *.jpg
 </span></span></code></pre></div><p>renames all JPG files in the working directory to <code>date_time.jpg</code>,
 something very useful.</p>
 
@@ -143,7 +143,22 @@ something very useful.</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

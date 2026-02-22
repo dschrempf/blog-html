@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -95,7 +95,7 @@
     <p>Did you ever need to calculate the time difference between two consecutive time
 stamps from a log file or something similar? Check out <a href="http://www.fresse.org/dateutils/">dateutils</a>, it is really
 useful:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ddiff -i <span style="color:#4e9a06">&#39;%H:%M:%S&#39;</span> <span style="color:#4e9a06">&#39;19:09:43,683&#39;</span> <span style="color:#4e9a06">&#39;19:34:10,350&#39;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ddiff -i <span style="color:#4e9a06">&#39;%H:%M:%S&#39;</span> <span style="color:#4e9a06">&#39;19:09:43,683&#39;</span> <span style="color:#4e9a06">&#39;19:34:10,350&#39;</span>
 </span></span></code></pre></div>
   </div>
 </div>
@@ -103,7 +103,22 @@ useful:</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

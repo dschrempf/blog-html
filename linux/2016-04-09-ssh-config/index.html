@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -98,7 +98,7 @@ host names, IP addresses or passwords.</p>
 <h2 id="login-with-ssh-key">Login with SSH key</h2>
 <p>First, you want to create your own <a href="https://wiki.archlinux.org/index.php/SSH_keys">SSH key</a> so that your server accepts
 your login without any password.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create an SSH key (use the standard path).  Be careful, if you do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create an SSH key (use the standard path).  Be careful, if you do</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># not set a passphrase, anybody that has access to your computer can</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># log into servers that have been set up to accept your key.</span>
 </span></span><span style="display:flex;"><span>ssh-keygen
@@ -110,12 +110,12 @@ your login without any password.</p>
 </span></span><span style="display:flex;"><span>ssh yourusername@yourserver.example.com
 </span></span></code></pre></div><h2 id="use-dot-ssh-config">Use <code>~/.ssh/config</code></h2>
 <p>Now, it is getting better; edit or create the file <code>~/.ssh.config</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#~/.ssh/config
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#~/.ssh/config
 </span></span><span style="display:flex;"><span>Host server
 </span></span><span style="display:flex;"><span>     HostName yourserver.example.com
 </span></span><span style="display:flex;"><span>     User yourusername
 </span></span></code></pre></div><p>Try to log into <code>yourserver</code> (now aliased <code>server</code>):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh server
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh server
 </span></span></code></pre></div><p>Wow, that was fast.</p>
 <h2 id="proxycommand">ProxyCommand</h2>
 <p>And it can get better.  Very often, the computer <code>privatecomputer</code>
@@ -126,7 +126,7 @@ in turn has access to <code>private</code>.</p>
 </figure>
 
 <p>Hmm, normally, you would need to</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Log into the server.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Log into the server.</span>
 </span></span><span style="display:flex;"><span>ssh yourusername@yourserver.example.com
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Wait.  Enter password.  Wait.</span>
 </span></span><span style="display:flex;"><span>ssh privateusername@privatecomputer.local
@@ -140,7 +140,7 @@ if you want).</li>
 </ul>
 <p>However, we can also do something much more awesome.  Put this into
 your <code>~/.ssh/config</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#~/.ssh/config
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#~/.ssh/config
 </span></span><span style="display:flex;"><span>  Host server
 </span></span><span style="display:flex;"><span>       HostName yourserver.example.com
 </span></span><span style="display:flex;"><span>       User yourusername
@@ -149,7 +149,7 @@ your <code>~/.ssh/config</code>:</p>
 </span></span><span style="display:flex;"><span>       ProxyCommand ssh -q server -W privatecomputer.local:22
 </span></span><span style="display:flex;"><span>       User privateusername
 </span></span></code></pre></div><p>And try it out:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh private
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh private
 </span></span></code></pre></div><p>Wow.</p>
 
   </div>
@@ -158,7 +158,22 @@ your <code>~/.ssh/config</code>:</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

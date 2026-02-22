@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -124,7 +124,7 @@ set up an SSH SOCKS proxy; check it out.</p>
 <p>In order for this to work, you need SSH access from client A to client
 B.  Client B needs to have access to the internet.  Then you can setup
 a dynamic SSH tunnel at client A with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -vvv -N -D <span style="color:#0000cf;font-weight:bold">1080</span> username@clientB
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -vvv -N -D <span style="color:#0000cf;font-weight:bold">1080</span> username@clientB
 </span></span></code></pre></div><dl>
 <dt><code>-vvv</code></dt>
 <dd>Increase verbosity to a high level, so that you can debug
@@ -151,7 +151,7 @@ sample configuration file looks like this:</p>
 <p><span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-01 Wed&gt; </span></span> The automatic detection of the SOCKS proxy did not
 work anymore (BTSync version <code>2.0.93</code>).  I have adjusted the
 configuration file below.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span><span style="color:#f8f8f8">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span><span style="color:#f8f8f8">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8">  </span><span style="color:#4e9a06">&#34;device_name&#34;</span><span style="color:#f8f8f8"> </span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#4e9a06">&#34;username@clientA&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8">  </span><span style="color:#4e9a06">&#34;listening_port&#34;</span><span style="color:#f8f8f8"> </span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#000">0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8"> </span><span style="color:#8f5902;font-style:italic">// 0 - randomize port.</span><span style="color:#f8f8f8">
 </span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8">
@@ -209,7 +209,22 @@ configuration file below.</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

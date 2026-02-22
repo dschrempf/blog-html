@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -104,7 +104,7 @@ D., &amp; Kosiol, C. (2015). PoMo: An Allele Frequency-Based Approach for
 Species Tree Estimation. Systematic Biology, 64(6),
 1018–1031. <a href="https://doi.org/10.1093/sysbio/syv048)">https://doi.org/10.1093/sysbio/syv048)</a>.</p>
 <p>Using the chain is as easy as:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// Define a GNU Scientific Library Matrix object.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// Define a GNU Scientific Library Matrix object.
 </span></span></span><span style="display:flex;"><span><span style="color:#000">gsl_matrix</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">my_transition_rate_matrix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">alloc_and_set_matrix</span><span style="color:#000;font-weight:bold">();</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">CTMC</span> <span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">my_transition_rate_matrix</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">number_of_states</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a_specific_time</span><span style="color:#000;font-weight:bold">);</span>
@@ -114,7 +114,7 @@ Species Tree Estimation. Systematic Biology, 64(6),
 </span></span><span style="display:flex;"><span><span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print_invariant_distribution</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">std</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">cout</span><span style="color:#000;font-weight:bold">);</span>
 </span></span></code></pre></div><p>If you want to log the path of the chain, you have to activate the log
 path upon initialization:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000">CTMC</span> <span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">my_transition_rate_matrix</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">number_of_states</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">);</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000">CTMC</span> <span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">my_transition_rate_matrix</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">number_of_states</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// Print the path.
 </span></span></span><span style="display:flex;"><span><span style="color:#000">my_chain</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print_path</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">std</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">cout</span><span style="color:#000;font-weight:bold">);</span>
@@ -127,7 +127,22 @@ memory.</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

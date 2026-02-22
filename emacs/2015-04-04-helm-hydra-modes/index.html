@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -106,7 +106,7 @@ found at the following homepages:</p>
 <p>I can recommend to use the <code>TAB</code> key for completion and not for other
 actions.  You can bind the <code>TAB</code> key back to
 <code>helm-execute-persistent-action</code> with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">;; Bind TAB to complete stuff.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">;; Bind TAB to complete stuff.</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">define-key</span> <span style="color:#000">helm-map</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">kbd</span> <span style="color:#4e9a06">&#34;TAB&#34;</span><span style="color:#000;font-weight:bold">)</span>         <span style="color:#4e9a06">&#39;helm-execute-persistent-action</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">;; Rebind `helm-select-action&#39; (originally bound to TAB).</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">define-key</span> <span style="color:#000">helm-map</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">kbd</span> <span style="color:#4e9a06">&#34;C-j&#34;</span><span style="color:#000;font-weight:bold">)</span>         <span style="color:#4e9a06">&#39;helm-select-action</span><span style="color:#000;font-weight:bold">)</span>
@@ -134,7 +134,22 @@ configuration files again (and again and again).  It is very useful!</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

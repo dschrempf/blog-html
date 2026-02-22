@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -117,7 +117,7 @@ scattered around a bit, so here you go:</p>
 <li>the <a href="https://wiki.archlinux.org/title/Monit">Arch Wiki entry on Monit</a>.</li>
 </ul>
 <p>The NixOS configuration module:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span> <span style="color:#000">filesystems</span> <span style="color:#8f5902;font-style:italic"># List of monitored file system paths.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span> <span style="color:#000">filesystems</span> <span style="color:#8f5902;font-style:italic"># List of monitored file system paths.</span>
 </span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">drives</span>      <span style="color:#8f5902;font-style:italic"># List of monitored drives.</span>
 </span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">allowIps</span>    <span style="color:#8f5902;font-style:italic"># Allow access from these IP addresses.</span>
 </span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">openPort</span>    <span style="color:#8f5902;font-style:italic"># Open Monit TCP port in firewall?</span>
@@ -194,7 +194,7 @@ scattered around a bit, so here you go:</p>
 </span></span></code></pre></div><p>Please note the <code>--nocheck=standby</code> options for <code>smartctl</code>; they inhibit hard
 drive spin ups. Pretty neat!</p>
 <p>The module can be used in your NixOS configuration like so:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">imports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">./path/to/monit.nix</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#000">filesystems</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#34;/&#34;</span> <span style="color:#4e9a06">&#34;/nix&#34;</span> <span style="color:#4e9a06">&#34;/mnt/data&#34;</span> <span style="color:#ce5c00;font-weight:bold">...</span> <span style="color:#000;font-weight:bold">];</span>
@@ -211,7 +211,22 @@ drive spin ups. Pretty neat!</p>
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">

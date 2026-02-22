@@ -25,7 +25,7 @@
         
         
         
-        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.6.1.2.all.min.css" />
+        <link rel="stylesheet" href="https://blog.composef.org/css/font.awesome.7.2.0.all.min.css" />
     </head>
 
     <body>
@@ -171,7 +171,7 @@ am developing. Here, I only briefly present the essential steps to run an MCMC
 sampler; please have a look at the documentation on Hackage, if you want to get
 a deeper understanding of the internals. Further, we use the <a href="https://hackage.haskell.org/package/random">random</a> library, as
 well as the following imports:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">-- We need &#39;void&#39;.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">-- We need &#39;void&#39;.</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Control.Monad</span>
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">-- I am developing the &#39;mcmc&#39; library.</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Mcmc</span>
@@ -180,10 +180,10 @@ well as the following imports:</p>
 </span></span></code></pre></div><p>The state space \(I\) of an MCMC sampler defines the possible values the Markov
 chain can attain. In our case \(I\) is the fatal accident rate \(\lambda\), a
 floating point number:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#204a87;font-weight:bold">I</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Double</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#204a87;font-weight:bold">I</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Double</span>
 </span></span></code></pre></div><p>For a given fatal accident rate \(\lambda\), the <a href="https://en.wikipedia.org/wiki/Likelihood_function">likelihood function</a> is a
 product of Poisson probabilities with the observed fatalities:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">lh</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">LikelihoodFunction</span> <span style="color:#204a87;font-weight:bold">I</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">lh</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">LikelihoodFunction</span> <span style="color:#204a87;font-weight:bold">I</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">lh</span> <span style="color:#000">x</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">product</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">poisson</span> <span style="color:#000">x</span> <span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000">y</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">fatalities</span><span style="color:#000;font-weight:bold">]</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">where</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000">fatalities</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">24</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">31</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">31</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">22</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">21</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">16</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">22</span><span style="color:#000;font-weight:bold">]</span>
@@ -199,7 +199,7 @@ use probabilities in the log domain to avoid numerical underflow; see
 \(\lambda\).</li>
 </ul>
 <!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">ppSl</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Proposal</span> <span style="color:#204a87;font-weight:bold">I</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">ppSl</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Proposal</span> <span style="color:#204a87;font-weight:bold">I</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ppSl</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">slideSymmetric</span> <span style="color:#0000cf;font-weight:bold">0.1</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">PName</span> <span style="color:#4e9a06">&#34;lambda&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">pWeight</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">Tune</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ppSc</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Proposal</span> <span style="color:#204a87;font-weight:bold">I</span>
@@ -213,7 +213,7 @@ roughly corresponds to the number of independent parameters manipulated by the
 proposal. Tuning only happens during the first phase of the sampler which is
 called burn in (more about that below).</p>
 <p>We collect the proposals in a <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Cycle.html#t:Cycle">cycle</a>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">cc</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Cycle</span> <span style="color:#204a87;font-weight:bold">I</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">cc</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Cycle</span> <span style="color:#204a87;font-weight:bold">I</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">cc</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">cycleFromList</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">ppSl</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ppSc</span><span style="color:#000;font-weight:bold">]</span>
 </span></span></code></pre></div><p>This modular definition of proposals, that is, of <em>how to traverse the state
 space</em> is one of the big strengths of the <code>mcmc</code> library. For complicated state
@@ -221,7 +221,7 @@ spaces, we can use <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-P
 of the state they should change.</p>
 <p>Now, we define some <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Monitor.html#t:Monitor">monitors</a>, so that we can observe the values of \(\lambda\)
 attained by the Markov chain:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">-- &#39;monitorDouble&#39; is a simple monitor printing the value of a &#39;Double&#39;.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">-- &#39;monitorDouble&#39; is a simple monitor printing the value of a &#39;Double&#39;.</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">monLambda</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">MonitorParameter</span> <span style="color:#204a87;font-weight:bold">I</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">monLambda</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">monitorDouble</span> <span style="color:#4e9a06">&#34;lambda&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -237,7 +237,7 @@ attained by the Markov chain:</p>
 </span></span><span style="display:flex;"><span><span style="color:#000">mon</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Monitor</span> <span style="color:#000">monStdOut</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">monFile</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">[]</span>
 </span></span></code></pre></div><p>We do not use <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Monitor.html#t:MonitorBatch">batch monitors</a>, so the last list of <code>mon</code> is empty.</p>
 <p>Before running the chain, we need to provide some required <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Settings.html#t:Settings">settings</a>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">ss</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Settings</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">ss</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Settings</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ss</span> <span style="color:#204a87;font-weight:bold">=</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">Settings</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8f5902;font-style:italic">-- Provide an analysis name.</span>
@@ -269,7 +269,7 @@ attained by the Markov chain:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">Info</span>
 </span></span></code></pre></div><p>Finally, we instantiate a chain using the <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Algorithm-MHG.html">Metropolis-Hastings-Green algorithm</a>
 (MHG, <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Algorithm-MHG.html#v:mhg"><code>mhg</code></a> function) and run the MCMC sampler with the <a href="https://hackage.haskell.org/package/mcmc/docs/Mcmc-Mcmc.html#v:mcmc"><code>mcmc</code></a> function:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">g</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">mkStdGen</span> <span style="color:#0000cf;font-weight:bold">0</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">-- Set up the Markov chain. For computational efficiency (mutable vectors),</span>
@@ -282,7 +282,7 @@ attained by the Markov chain:</p>
 accompanying <a href="https://github.com/dschrempf/mcmc/blob/master/mcmc-examples/mcmc-examples.cabal">Cabal file</a>.</p>
 <h2 id="results">Results</h2>
 <p>Using the above mentioned Git repository, you can run the code with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cabal run poisson
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cabal run poisson
 </span></span></code></pre></div><p>There is a lot of informative output. Further, log files <code>poisson.mcmc.*</code> and
 the monitor file <code>poisson.lambda.monitor</code> are created. Here, I will have a look
 at the posterior function of \(\lambda\). To this end, I use <a href="http://tree.bio.ed.ac.uk/software/tracer/">Tracer</a> to inspect
@@ -318,7 +318,22 @@ or comments; drop them on the <a href="https://github.com/dschrempf/mcmc">reposi
 
         
         
-        <script src="https://blog.composef.org/js/mathjax.3.2.2.tex-svg.min.js"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="https://blog.composef.org/js/mathjax.4.0.0.tex-svg.min.js"></script>
 
         
         <div class="bottombar">
