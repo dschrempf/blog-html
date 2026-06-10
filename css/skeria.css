@@ -26,9 +26,6 @@ body {
 /* Links. */
 
 a {
-  /* color: #444c57; */
-  /* color: #3873b3; */
-  /* color: #2c5a8c; */
   color: #21446a;
   text-decoration: none;
 }
@@ -68,12 +65,6 @@ h6 {
 }
 
 /******************************************************************************/
-/* Lead (text under title). */
-
-.lead {
-}
-
-/******************************************************************************/
 /* Paragraphs and lists. */
 
 p {
@@ -103,7 +94,10 @@ code, pre, .timestamp {
   letter-spacing: -0.01em;
 }
 
-code {
+/* Inline code only. Scoped with :not(pre) so it does not paint a grey box
+   behind code inside highlighted code blocks (which carry their own
+   background from the syntax highlighter). */
+:not(pre) > code {
   background-color: #eee;
 }
 
@@ -116,9 +110,6 @@ code {
   /* Do not wrap to next line. */
   /* XXX: May be problematic with long inline code blocks. */
   white-space: nowrap;
-}
-
-.highlight {
 }
 
 pre {
@@ -151,7 +142,6 @@ a.label:focus, a.label:hover {
 img {
   display: block;
   max-width: 100%;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -219,34 +209,27 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  border-radius: 4px;
   border: 1px solid #666;
 }
 
 /******************************************************************************/
-/* Containers. */
+/* Topbar and bottombar (identical styling). */
 
-.container {
-}
-
-/******************************************************************************/
-/* Topbar. */
-
-.topbar {
+.topbar, .bottombar {
   color: rgba(255,255,255,.5);
   background-color: #444c57;
   text-align: center;
 }
 
-.topbar a {
+.topbar a, .bottombar a {
   color: #fff;
 }
 
-.topbar p {
+.topbar p, .bottombar p {
   margin: 0;
 }
 
-.topbar-sticky {
+.topbar-sticky, .bottombar-sticky {
   padding: 0.5em 2em 0.5em 2em;
 }
 
@@ -258,28 +241,6 @@ input[type=text]:focus {
 
 .topbar-nav-item {
   margin: 0.7em;
-}
-
-
-/******************************************************************************/
-/* Bottombar. */
-
-.bottombar {
-  color: rgba(255,255,255,.5);
-  background-color: #444c57;
-  text-align: center;
-}
-
-.bottombar a {
-  color: #fff;
-}
-
-.bottombar p {
-  margin: 0;
-}
-
-.bottombar-sticky {
-  padding: 0.5em 2em 0.5em 2em;
 }
 
 /******************************************************************************/
@@ -297,8 +258,22 @@ input[type=text]:focus {
 }
 
 .icons-item {
-  padding-let: 0.4em;
+  padding-left: 0.4em;
   padding-right: 0.4em;
+}
+
+/* Inline icon row used as a subtitle within page content (e.g. the social
+   icons under the name on the about page). Lays the icons out flush-left with
+   even spacing so the row lines up with surrounding text, without affecting
+   the centred .icons rows in the topbar/bottombar. */
+.icons-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+
+.icons-subtitle .icons-item {
+  padding: 0;
 }
 
 /******************************************************************************/
@@ -341,6 +316,24 @@ input[type=text]:focus {
   margin-bottom: 2em;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+/* Borderless, full-width listing of posts (section and taxonomy pages). */
+.post-list table,
+.post-list td,
+.post-list th {
+  border: none;
+}
+
+.post-list td,
+.post-list th {
+  padding: 5px 0;
+  vertical-align: top;
+}
+
+.post-list tbody tr:nth-child(odd) td,
+.post-list tbody tr:nth-child(odd) th {
+  background-color: #fff;
 }
 
 .post-title,
