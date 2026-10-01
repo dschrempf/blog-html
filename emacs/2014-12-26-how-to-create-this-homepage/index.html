@@ -225,7 +225,6 @@ framework</a>.</p>
 <h2 id="org-mode-publishing-setup">Org Mode publishing setup</h2>
 <p>This is the main step.  Org mode has to know how to export your Org
 files so that they can be hosted by GitHub:</p>
-<p><a id="code-snippet--Org publish setup"></a></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">setq</span> <span style="color:#000">org-publish-project-alist</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#ce5c00;font-weight:bold">&#39;</span><span style="color:#000;font-weight:bold">(</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#8f5902;font-style:italic">;; Blog posts in Org mode that are exported to html and hosted</span>
@@ -272,7 +271,6 @@ with the project <code>website</code> (e.g. with <code>M-x org-publish website</
 preamble includes a small header; the postamble includes the Disqus
 comment section and Google Analytics (make sure to replace you
 user name and tracking ID).</p>
-<p><a id="code-snippet--Preamble and postamble"></a></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">;; BugFix: Manually disable home/up links in preamble.</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">setq</span> <span style="color:#000">org-html-home/up-format</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span>

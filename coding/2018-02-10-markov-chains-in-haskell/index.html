@@ -189,7 +189,7 @@ The concept of a Markov chain is explained well in this article but I believe
 that the example is too complicated to understand in a reasonable amount of
 time. Also, the <a href="https://hackage.haskell.org/package/repa">Repa package</a> is used to represent the transition matrices. This
 seemed a little bit of an overkill to me, so I decided to go with <a href="http://hackage.haskell.org/package/containers-0.5.11.0/docs/Data-Map-Strict.html">maps</a>.</p>
-<p>You can also <a href="/ox-hugo/MarkovChainWithMap.hs">download the source code</a> of the following post.</p>
+<p>You can also <a href="MarkovChainWithMap.hs">download the source code</a> of the following post.</p>
 <p>In this example, we will handle sentences with words. So our states are words
 which are strings. It is also convenient to introduce some type synonyms.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">module</span> <span style="color:#000">Main</span> <span style="color:#204a87;font-weight:bold">where</span>
